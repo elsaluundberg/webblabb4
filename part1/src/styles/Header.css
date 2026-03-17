@@ -1,0 +1,134 @@
+/* HEADER: Denna styr hela header-sektionen */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 5%;   
+    flex-wrap: wrap;
+    padding: 15px;
+    width: 100%;
+    background: rgba(26, 58, 26, 0.3); 
+    backdrop-filter: blur(15px); 
+    z-index: 1000; 
+    position: fixed;
+    top: 0;
+}
+
+/* NAV UL: Denna styr själva listan i din meny */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+/* NAV A: Denna styr utseendet på länk-texten */
+nav a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+    top: 20px;
+    margin-right: 45px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Denna regel aktiveras när man håller musen över länkarna */
+nav a:hover {
+    color: #a3c9a8;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Effekt: En liten linje som växer fram under länken */
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #a3c9a8;
+    transition: width 0.3s; /* Gör att linjen växer fram mjukt */
+    position: absolute;
+    bottom: -5px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.logo-link {
+    text-decoration: none; /* Tar bort understreck */
+    color: white;       /* Behåller vit färg på texten */
+    display: flex;
+    align-items: center;
+}
+
+.logo-link:hover {
+    opacity: 0.8;         /* Ger en liten visuell feedback vid hover */
+    transition: 0.3s;
+}
+
+/* Undermenyn för verksamhet i medlem.html*/
+/* Gör att undermenyn hamnar under huvudmenyn */
+#sub-menu-verksamhet {
+    position: absolute;
+    top: 100%;           
+    left: 70%;             
+    transform: translateX(-50%);
+    background: rgba(26, 58, 26, 0.95); 
+    padding: 20px;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1001;
+
+    text-align: center;
+}
+
+#sub-menu-verksamhet li {
+    margin: 5px 0;
+    position: relative;
+    top: -20px !important;
+}
+
+#sub-menu-verksamhet a {
+    font-size: 1.1rem !important;
+    margin: 0 !important;
+}
+
+
+
+/* LOGO CONTAINER: Denna styr loggan med bild och text */
+/* Behållaren som håller både bild och text */
+.logo-container {
+    display: flex;
+    align-items: center; /* Centrerar texten vertikalt jämte bilden */
+    gap: 0px; /* Skapar ett litet mellanrum mellan bollen och texten */
+}
+
+/* Storleken på själva golfbollen */
+.logo {
+    height: 85px; /* Justera efter behov */
+    width: auto;
+}
+
+/* Stylingen för texten bredvid loggan */
+.logo-text {
+    font-family: 'Inter', sans-serif;
+    color: white; /* Hög kontrast för målgruppen */
+    line-height: 0.9; /* Gör att orden hamnar tätt ihop vertikalt */
+}
+
+/* Övre ordet (Gunnarn) - Tunnare */
+.name-top {
+    font-weight: 400; /* Eller 400 om 300 känns för tunt */
+    font-size: 2rem;
+}
+
+/* Undre ordet (Golfklubb) - Fetare */
+.name-bottom {
+    font-weight: bold; /* Mycket fet stil som i prototypen */
+    font-size: 2.3rem; /* Lite större för att ge tyngd */
+    text-transform: lowercase; /* Om du vill ha små bokstäver som i bilden */
+}

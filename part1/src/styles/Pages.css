@@ -1,0 +1,140 @@
+/* Grundinställningar utifrån din rapport */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap');
+
+body {
+    background: linear-gradient(to bottom, #2d5a2d, #121212); 
+    background-repeat: no-repeat;
+    
+    /* Gör att gradienten täcker hela webbläsarfönstret oavsett mängd text */
+    min-height: 100vh;
+    
+    /* Gör att bakgrunden stannar kvar när man scrollar */
+    background-attachment: fixed;
+    color: white; /* Textens färg */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* HERO SECTION: Denna styr välkomstsektionen på startsidan */
+/*"Välkommen till gunnarns gk-textens placering*/
+.hero {
+    position: relative; /* Viktigt för att kunna placera videon bakom */
+    height: 70vh; 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Döljer video som sticker ut utanför ramen */
+    margin: 0; /* Vi tar bort den stora marginalen nu när vi har video */
+    align-items: flex-start; /* Gör så att vi kan styra avståndet från toppen */
+    padding-top: 320px;
+
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Trycker bak videon bakom texten */
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ser till att videon inte blir ihoptryckt */
+}
+
+/* Ett mörkt lager ovanpå videon så att vit text syns tydligt */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Skapar en mjuk övergång från 40% svart till din bakgrundsfärg */
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Lägger texten ovanpå det mörka lagret */
+}
+
+/*Storleken på välkommen... texten*/
+.hero h1 {
+    font-weight: 400; /* Ger den tunna, eleganta känslan från prototypen */
+    font-size: 3.5rem;
+    margin-bottom: 0.2em; /* Minskat avstånd till undertexten */
+    letter-spacing: -0.01em;
+}
+
+/*Storleken på sloganen under*/
+.hero-subtext {
+    font-size: 2.5rem; /* Gör texten större (standard är oftast 1rem) */
+    font-weight: 200; /* Gör den lite tunnare för en elegant look som i prototypen */
+    margin-top: -5px;  /* Skapar lagom avstånd till rubriken ovanför */
+}
+
+
+
+/* --- SECTION: GEMENSAMT FÖR ALLA UNDERSIDOR --- */
+.subpage-container {
+    max-width: 900px;
+    margin: 300px auto 50px auto; /* Enhetlig höjd från headern */
+    padding: 0 20px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+
+    max-width: 1000px;    /* Gör boxen smalare */
+    margin-left: auto;   /* Centrerar boxen */
+    margin-right: auto;  /* Centrerar boxen */
+}
+
+/* Styling för video på undersidor */
+.info-card video {
+    width: 100%;
+    max-width: 800px; 
+    display: block;
+    margin: 20px auto; 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    background-color: #000; 
+}
+
+.flex-row {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Startläge för jQuery-animationen i Task 4 */
+.scroll-animate {
+    opacity: 0;         /* Gör den helt genomskinlig */
+    position: relative; 
+    top: 50px;          /* Startar 50px längre ner */
+}
