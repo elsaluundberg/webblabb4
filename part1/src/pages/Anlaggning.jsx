@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import '../styles/Pages.css';
 import '../styles/style.css';
+import '../styles/LikeButton.css';
 
 import bankarta from '../assets/bankarta.png';
 import forestVideo from '../assets/forest_video.mp4';
+import LikeButton from '../components/LikeButton';
 
 class Anlaggning extends Component {
   render() {
@@ -44,6 +46,7 @@ class Anlaggning extends Component {
                 <video controls>
                     <source src={forestVideo} type="video/mp4" />
                 </video>
+                <LikeButton />
             </section>
       </main>
     );

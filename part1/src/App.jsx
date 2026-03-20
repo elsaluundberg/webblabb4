@@ -16,7 +16,7 @@ function App() {
       <div className="App">
         <Header />
         
-        <main> {/* Det är bra att ha en main-tagg runt dina sidor */}
+        <main> {}
           <Routes>
             <Route path="/" element={<MyHomePage />} />
             <Route path="/spela" element={<Spela />} />
